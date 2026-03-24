@@ -1,5 +1,396 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
+h2 {
+  font-size: var(--p-size);
+  font-weight: 700;
+  color: var(--color-h2);
+}
+
+h3 {
+  font-size: var(--p-size);
+  font-weight: 700;
+  color: var(--color-h3);
+}
+
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  background-color: var(--bg-color);
+  background-image: var(--bg-img);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: var(--font-family), sans-serif;
+}
+
+.header {
+  padding: 10px 10px;
+  block-size: 100vh;
+  min-block-size: 668px;
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+  align-items: center;
+}
+
+.header__theme-menu {
+  justify-self: end;
+  font-size: var(--p-size);
+}
+
+.header__theme-menu-list {
+  display: grid;
+  gap: 11px;
+  color: var(--color-menu);
+}
+
+.header__theme-menu-button {
+  background-color: transparent;
+  border: 0px;
+  text-transform: lowercase;
+  min-width: 70px;
+}
+
+.header__theme-menu-button:hover {
+  outline: 1px solid var(--color-menu-button-hover);
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-bottom: 1px solid var(--color-menu);
+}
+
+.header__theme-menu-button_active {
+  pointer-events: none;
+  border: 1px solid var(--color-menu);
+}
+
+.title-hero {
+  font-family: inherit;
+  font-weight: 700;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 83%;
+  color: var(--hero-color);
+  text-shadow: 4px 4px 0 var(--accent-color);
+}
+
+.decorated-zone {
+  position: relative;
+}
+
+.decorated-zone::before {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 10px;
+  right: 10px;
+  border: 1px solid var(--color-menu);
+  border-bottom: 0px;
+  border-left: 0px;
+}
+
+.decorated-zone::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  bottom: 10px;
+  left: 10px;
+  border: 1px solid var(--color-menu);
+  border-top: 0px;
+  border-right: 0px;
+}
+
+.title-description {
+  font-weight: 700;
+}
+
+.title-decor {
+  background-color: var(--accent-color);
+  font-size: var(--p-size);
+  font-family: inherit;
+  color: var(--color-h3);
+}
+
+.decorative_text {
+  position: absolute;
+  display: var(--visible);
+  align-items: center;
+  gap: 10px;
+  color: var(--accent-color);
+  text-transform: uppercase;
+  font-size: var(--p-size);
+  font-weight: 400;
+  justify-self: end;
+  top: 11px;
+  right: 19px;
+}
+
+.decorative_text::after {
+  content: "";
+  display: block;
+  width: 9px;
+  height: 9px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  box-shadow: 0 0 5px var(--accent-color);
+}
+
+.main {
+  padding: 40px 10px;
+  display: grid;
+  gap: 50px;
+  line-height: 23.4px;
+  background-color: var(--bg-color);
+}
+
+.main__text {
+  color: var(--color-main__text);
+  font-size: var(--p-size);
+}
+
+.main__section {
+  display: grid;
+  gap: 20px;
+}
+
+.main__description-golden-fish {
+  display: grid;
+  gap: 20px;
+}
+
+.main__description {
+  display: grid;
+  gap: 10px;
+}
+
+.tips-title {
+  font-weight: 400;
+}
+
+.link-effect {
+  text-shadow: 2px 2px var(--accent-color);
+  text-decoration: none;
+}
+
+.showed {
+  text-shadow: 2px 0 var(--accent-color);
+}
+
+.link-effect:hover {
+  border-bottom: 1px solid var(--color-main__text);
+}
+
+.link-effect:focus {
+  outline: none;
+}
+
+.link-effect:focus-visible {
+  outline: 1px solid var(--color-main__text);
+}
+
+.main__gallery {
+  display: grid;
+  gap: 10px;
+}
+
+.main__gallery-items {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr;
+  position: relative;
+}
+
+.gallery-image {
+  width: 100%;
+  object-fit: cover;
+}
+
+.footer {
+  background-color: var(--bg-color);
+  height: 100vh;
+  min-height: 668px;
+  display: grid;
+  place-items: center center;
+  padding: 0 10px;
+}
+
+.footer .footer__title {
+  align-self: center;
+  justify-self: center;
+  text-shadow: 2px 2px var(--accent-color);
+}
+
+@media (min-width: 768px) {
+  .header {
+    padding: 20px;
+  }
+
+  .header .title-hero {
+    justify-self: start;
+    align-self: center;
+    margin-inline-start: -20px;
+  }
+
+  .title-description {
+    justify-self: end;
+    max-width: calc(50vw - 20px);
+  }
+
+  .decorated-zone::before {
+    top: 20px;
+    right: 20px;
+  }
+
+  .decorated-zone::after {
+    left: 20px;
+    bottom: 20px;
+  }
+
+  .decorative_text {
+    top: 20px;
+    right: 29px;
+  }
+
+  .main {
+    padding: 60px 20px;
+    gap: 80px;
+  }
+
+  .main__section {
+    grid-template-columns: 1fr repeat(2, 29.5vw);
+  }
+
+  .main__description-so-hard {
+    grid-column: 2 / 4;
+  }
+
+  .main__section-concentration-title {
+    grid-column: 1;
+  }
+
+  .main__section-concentration .main__description {
+    grid-column: 1 / 4;
+    grid-auto-flow: row;
+  }
+
+  .main__description-golden-fish {
+    display: grid;
+    gap: 20px;
+    grid-column: 2 / 4;
+  }
+
+  .main__gallery {
+    gap: 20px;
+  }
+
+  .main__gallery .main__gallery-items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .gallery-image {
+    height: 100%;
+  }
+
+  .sunset {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+  }
+
+  .ice-cream {
+    grid-column: 3 / 4;
+    grid-row: 1 / 3;
+  }
+
+  .tape {
+    grid-column: 1 / 2;
+    grid-row: 2 / 4;
+  }
+
+  .books {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
+
+  .street {
+    grid-column: 2 / 4;
+    grid-row: 3 / 4;
+  }
+}
+
+@media (min-width: 1024px) {
+  .header {
+    padding: 20px;
+  }
+
+  .header__theme-menu {
+    justify-self: center;
+    align-self: start;
+  }
+
+  .header__theme-menu-list {
+    grid-auto-flow: column;
+  }
+
+  .title-hero {
+    justify-self: start;
+    align-self: center;
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
+  .header .title-hero {
+    margin-inline-start: -20px;
+  }
+
+  .title-description {
+    justify-self: end;
+    max-width: calc(50vw - 20px);
+  }
+
+  .decorated-zone::before {
+    top: 20px;
+    right: 20px;
+  }
+
+  .decorated-zone::after {
+    left: 20px;
+    bottom: 20px;
+  }
+
+  .decorative_text {
+    top: 20px;
+    right: 29px;
+  }
+
+  .main {
+    padding: 60px 20px;
+    gap: 80px;
+  }
+
+  .main__section {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .main__description-so-hard {
+    grid-column: 2 / 4;
+  }
+
+  .main__section-concentration-title {
+    grid-column: 1 / span 3;
+  }
+
+  .main__section-concentration .main__description {
+    align-self: start;
+    grid-column: auto;
+  }
+
+  .main__description-golden-fish {
+    display: grid;
+    gap: 20px;
+    grid-column: 2 / 4;
+  }
 }
