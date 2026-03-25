@@ -161,6 +161,11 @@ h3 {
   gap: 20px;
 }
 
+.main__description-golden-fish ul {
+  display: grid;
+  gap: 20px;
+}
+
 .main__description {
   display: grid;
   gap: 10px;
@@ -394,4 +399,6 @@ h3 {
     gap: 20px;
     grid-column: 2 / 4;
   }
+
+
 }
