@@ -14,9 +14,9 @@
   --hero-color: #db00ff;
   --accent-color: #ff0070;
   --color-menu: #ff0070;
-  --color-h2: #ff0070;
-  --color-h3: #000028;
+  --color-heading: #ff0070;
+  --color-subheading: #000028;
   --visible: flex;
-  --color-main__text: #f1b2ce;
+  --color-main-text: #f1b2ce;
   --color-menu-button-hover: rgba(255, 0, 112, 40%);
 }

@@ -3,13 +3,13 @@
 h2 {
   font-size: var(--p-size);
   font-weight: 700;
-  color: var(--color-h2);
+  color: var(--color-heading);
 }
 
 h3 {
-  font-size: var(--p-size);
+  font-size: var(--p-size, 18px);
   font-weight: 700;
-  color: var(--color-h3);
+  color: var(--color-subheading);
 }
 
 .page {
@@ -44,7 +44,7 @@ h3 {
 
 .header__theme-menu-button {
   background-color: transparent;
-  border: 0px;
+  border: 1px solid transparent;
   text-transform: lowercase;
   min-width: 70px;
 }
@@ -111,7 +111,7 @@ h3 {
   background-color: var(--accent-color);
   font-size: var(--p-size);
   font-family: inherit;
-  color: var(--color-h3);
+  color: var(--color-subheading);
 }
 
 .decorative_text {
@@ -147,7 +147,7 @@ h3 {
 }
 
 .main__text {
-  color: var(--color-main__text);
+  color: var(--color-main-text);
   font-size: var(--p-size);
 }
 
@@ -180,7 +180,7 @@ h3 {
 }
 
 .link-effect:hover {
-  border-bottom: 1px solid var(--color-main__text);
+  border-bottom: 1px solid var(--color-main-text);
 }
 
 .link-effect:focus {
@@ -188,7 +188,7 @@ h3 {
 }
 
 .link-effect:focus-visible {
-  outline: 1px solid var(--color-main__text);
+  outline: 1px solid var(--color-main-text);
 }
 
 .main__gallery {
@@ -267,7 +267,7 @@ h3 {
     grid-column: 2 / 4;
   }
 
-  .main__section-concentration-title {
+  .main__section-concentration h2 {
     grid-column: 1;
   }
 
@@ -379,7 +379,8 @@ h3 {
     grid-column: 2 / 4;
   }
 
-  .main__section-concentration-title {
+  .main__section-concentration h2 {
+    max-width: 315px;
     grid-column: 1 / span 3;
   }
 
